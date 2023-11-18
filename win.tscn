@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cc1rjdi54s4m8"]
+[gd_scene load_steps=3 format=3 uid="uid://cc1rjdi54s4m8"]
 
+[ext_resource type="Script" path="res://win.gd" id="1_2dlb2"]
 [ext_resource type="Texture2D" uid="uid://dc51qmbabek6b" path="res://assets/sprites/win_screen.png" id="1_m8ni4"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_2dlb2")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1792.0
