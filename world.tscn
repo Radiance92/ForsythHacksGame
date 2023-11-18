@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://xm5qgg6ljc0k"]
+[gd_scene load_steps=3 format=3 uid="uid://7ts36ngeqnb8"]
 
-[ext_resource type="PackedScene" uid="uid://cvh16t1lqnwky" path="res://player.tscn" id="1_o6uee"]
+[ext_resource type="PackedScene" uid="uid://cgpvjakf85bbe" path="res://player.tscn" id="1_o6uee"]
+[ext_resource type="PackedScene" uid="uid://youj5bx7ypgf" path="res://coin.tscn" id="2_flgsm"]
 
 [node name="World" type="Node2D"]
 
@@ -8,6 +9,9 @@
 position = Vector2(-0.62, 0)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="coin" parent="StaticBody2D" instance=ExtResource("2_flgsm")]
+position = Vector2(101, 134)
 
 [node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(11, 158, 301, 161, 549, 272, 10, 258)
