@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://xm5qgg6ljc0k"]
+[gd_scene load_steps=8 format=3 uid="uid://xm5qgg6ljc0k"]
 
 [ext_resource type="PackedScene" uid="uid://cvh16t1lqnwky" path="res://player.tscn" id="1_o6uee"]
 [ext_resource type="PackedScene" uid="uid://bgxd8m40jts8" path="res://tile_map.tscn" id="2_h37ip"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dy3ruawlx75c5" path="res://goal.tscn" id="4_88qyg"]
 [ext_resource type="PackedScene" uid="uid://de4rs68hb5p13" path="res://energy.tscn" id="5_pj2ui"]
 [ext_resource type="Script" path="res://energy.gd" id="6_n2cmx"]
+[ext_resource type="Script" path="res://Label.gd" id="7_wn7k6"]
 
 [node name="World" type="Node2D"]
 
@@ -44,3 +45,11 @@ zoom = Vector2(2.24, 2.24)
 position = Vector2(182, 120)
 scale = Vector2(0.414387, 0.322962)
 script = ExtResource("6_n2cmx")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 575.0
+offset_top = 251.0
+offset_right = 615.0
+offset_bottom = 274.0
+text = "null"
+script = ExtResource("7_wn7k6")

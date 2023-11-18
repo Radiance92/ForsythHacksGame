@@ -1,17 +1,21 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var energy = 100
+signal energyvalue
 
 func _physics_process(delta):
+	energy -= delta
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -25,6 +29,13 @@ func _physics_process(delta):
 						else 0
 					)
 	velocity.x = direction * SPEED
+	if energy == 0:
+		get_tree().change_scene_to_file("win")
+		
+	
+
+	
+	
 
 	move_and_slide()
 # This creates an animation that makes the node "Enemy" move to the right by
@@ -33,6 +44,9 @@ var animation = Animation.new()
 var track_index = animation.add_track(Animation.TYPE_VALUE)
 
 @onready var _animated_sprite = $AnimatedSprite2D
+
+func _getE():
+	return energy
 
 func _process(_delta):
 	if Input.is_action_pressed("move_right"):

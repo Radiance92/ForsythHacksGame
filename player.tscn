@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://cvh16t1lqnwky"]
 
 [ext_resource type="Script" path="res://assets/scripts/CharacterBody2D.gd" id="1_63nq6"]
-[ext_resource type="SpriteFrames" uid="uid://yost3n3165q2" path="res://player.tres" id="2_8euyf"]
+[ext_resource type="SpriteFrames" uid="uid://yost3n3165q2" path="res://assets/player.tres" id="2_pjqov"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2l86"]
 size = Vector2(26, 36)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." groups=["player"]]
 script = ExtResource("1_63nq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -19,5 +19,5 @@ shape = SubResource("RectangleShape2D_f2l86")
 texture_filter = 1
 position = Vector2(40, 49)
 scale = Vector2(1.12103, 1.24118)
-sprite_frames = ExtResource("2_8euyf")
-animation = &"walkleft"
+sprite_frames = ExtResource("2_pjqov")
+animation = &"walkright"
