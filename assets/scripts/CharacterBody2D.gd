@@ -6,15 +6,9 @@ const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-<<<<<<< HEAD
 var energy = 100
 signal energyvalue
 
-=======
-var charge = 0
-func _ready():
-	pass
->>>>>>> dd1bb5bb62d42b1bc5778dd080d8bbb16066322b
 func _physics_process(delta):
 	energy -= delta
 	
