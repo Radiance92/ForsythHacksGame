@@ -19,10 +19,25 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+	var direction = (
+						-1 if Input.is_action_pressed("move_left")
+						else 1 if Input.is_action_pressed("move_right")
+						else 0
+					)
+	velocity.x = direction * SPEED
 
 	move_and_slide()
+# This creates an animation that makes the node "Enemy" move to the right by
+# 100 pixels in 0.5 seconds.
+var animation = Animation.new()
+var track_index = animation.add_track(Animation.TYPE_VALUE)
+
+@onready var _animated_sprite = $AnimatedSprite2D
+
+func _process(_delta):
+	if Input.is_action_pressed("move_right"):
+		_animated_sprite.play("walkright")
+	elif Input.is_action_pressed("move_left"):
+		_animated_sprite.play("walkleft")
+	else:
+		_animated_sprite.stop()

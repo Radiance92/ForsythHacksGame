@@ -20,4 +20,4 @@ texture_filter = 1
 position = Vector2(40, 49)
 scale = Vector2(1.12103, 1.24118)
 sprite_frames = ExtResource("2_8euyf")
-frame_progress = 0.383753
+animation = &"walkleft"
