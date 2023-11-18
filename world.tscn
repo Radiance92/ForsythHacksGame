@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://xm5qgg6ljc0k"]
+[gd_scene load_steps=3 format=3 uid="uid://xm5qgg6ljc0k"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://cvh16t1lqnwky" path="res://player.tscn" id="1_o6uee"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qcrm4"]
+
+[node name="World" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_o6uee")]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+scale = Vector2(1.065, 1.065)
+texture = SubResource("PlaceholderTexture2D_qcrm4")
