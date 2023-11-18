@@ -4,7 +4,7 @@
 [ext_resource type="SpriteFrames" uid="uid://yost3n3165q2" path="res://player.tres" id="2_8euyf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f2l86"]
-size = Vector2(86, 99)
+size = Vector2(26, 36)
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,8 +12,12 @@ size = Vector2(86, 99)
 script = ExtResource("1_63nq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(44, 48)
+position = Vector2(40, 49)
 shape = SubResource("RectangleShape2D_f2l86")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+texture_filter = 1
+position = Vector2(40, 49)
+scale = Vector2(1.12103, 1.24118)
 sprite_frames = ExtResource("2_8euyf")
+frame_progress = 0.383753
